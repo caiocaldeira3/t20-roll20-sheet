@@ -78,3 +78,8 @@ def create_ability_template(ability_id: str) -> str:
 def create_power_template(power_id: str) -> str:
 	clean_template="&{template:t20-info}{{infoname=@{namepower}}}{{description=@{powerdescription}}}"
 	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_power(power_id, x.group(1))[0], clean_template)
+
+
+def create_spell_template(spell_id: str, spell_circle: str) -> str:
+	clean_template = "&{template:spell}{{character=@{character_name}}}{{spellname=@{namespell}}}{{type=@{spelltipo}}}{{execution=@{spellexecucao}}}{{duration=@{spellduracao}}}{{range=@{spellalcance}}}{{targetarea=@{spellalvoarea}}}{{resistance=@{spellresistencia}}}{{description=@{spelldescription}}}{{cd=@{spellcd}}}"
+	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_spell(spell_id, spell_circle, x.group(1))[0], clean_template)
