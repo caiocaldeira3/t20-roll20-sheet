@@ -12,8 +12,10 @@ substitute_regex = r"@{(?!character_name)(.*?)}"
 def sub_template(action_template: str, action_id: str) -> str:
 	return re.sub(substitute_regex, action_template, "@{_{action_id}_)")
 
-def padronize(rpt_type: str, rpt_id: str, rpt_attrs: Union[Sequence[str], str]) -> list:
+def padronize(rpt_type: str, rpt_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
 	if not isinstance(rpt_attrs, Sequence):
+		rpt_attrs = [rpt_attrs]
+	elif isinstance(rpt_attrs, str):
 		rpt_attrs = [rpt_attrs]
 
 	results = [
@@ -21,8 +23,10 @@ def padronize(rpt_type: str, rpt_id: str, rpt_attrs: Union[Sequence[str], str]) 
 	]
 	return results
 
-def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
+def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
 	if not isinstance(rpt_attrs, Sequence):
+		rpt_attrs = [rpt_attrs]
+	elif isinstance(rpt_attrs, str):
 		rpt_attrs = [rpt_attrs]
 
 	ability_attrs = padronize(
@@ -30,8 +34,10 @@ def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
 	)
 	return ability_attrs
 
-def rpt_power(power_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
+def rpt_power(power_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
 	if not isinstance(rpt_attrs, Sequence):
+		rpt_attrs = [rpt_attrs]
+	elif isinstance(rpt_attrs, str):
 		rpt_attrs = [rpt_attrs]
 
 	power_attrs = padronize(
@@ -39,8 +45,10 @@ def rpt_power(power_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
 	)
 	return power_attrs
 
-def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
+def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
 	if not isinstance(rpt_attrs, Sequence):
+		rpt_attrs = [rpt_attrs]
+	elif isinstance(rpt_attrs, str):
 		rpt_attrs = [rpt_attrs]
 
 	attack_attrs = padronize(
@@ -48,8 +56,10 @@ def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence[str], str]) -> str:
 	)
 	return attack_attrs
 
-def rpt_spell(spell_id: str, spell_circle: str, rpt_attrs: Union[Sequence[str], str]) -> str:
+def rpt_spell(spell_id: str, spell_circle: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
 	if not isinstance(rpt_attrs, Sequence):
+		rpt_attrs = [rpt_attrs]
+	elif isinstance(rpt_attrs, str):
 		rpt_attrs = [rpt_attrs]
 
 	spell_attrs = padronize(
