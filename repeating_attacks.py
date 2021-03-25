@@ -3,7 +3,7 @@ import pyperclip as pyclip
 from base import repeat, describe
 
 print("Cole aqui o ID do ataque que você quer repetir:")
-print("(Caso CTRL-V não cole o ID do poder recomendo testar CTRL+SHIFT+V)")
+print("(Caso CTRL-V não cole o ID do ataque recomendo testar CTRL+SHIFT+V)")
 
 attack_id = input()
 

@@ -2,8 +2,8 @@ import pyperclip as pyclip
 
 from base import repeat, describe
 
-print("Cole aqui o ID do magia que você quer repetir:")
-print("(Caso CTRL-V não cole o ID do poder recomendo testar CTRL+SHIFT+V)")
+print("Cole aqui o ID da magia que você quer repetir:")
+print("(Caso CTRL-V não cole o ID da magia recomendo testar CTRL+SHIFT+V)")
 
 spell_id = input()
 
@@ -16,8 +16,8 @@ spell_description = repeat(f"repeating_spells{spell_circle}", spell_id, "spellde
 
 recommended = describe(spell_name, spell_description)
 
-print(f"Macro para o nome do magia: {spell_name}")
-print(f"Macro para o nome do magia: {spell_description}")
+print(f"Macro para o nome da magia: {spell_name}")
+print(f"Macro para o nome da magia: {spell_description}")
 
 print(f"Macro recomendada: {recommended}")
 
