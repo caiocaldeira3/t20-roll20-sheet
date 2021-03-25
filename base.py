@@ -74,3 +74,7 @@ def create_attack_template(attack_id: str) -> str:
 def create_ability_template(ability_id: str) -> str:
 	clean_template="&{template:t20-info}{{infoname=@{nameability}}}{{description=@{abilitydescription}}}"
 	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_ability(ability_id, x.group(1))[0], clean_template)
+
+def create_power_template(power_id: str) -> str:
+	clean_template="&{template:t20-info}{{infoname=@{namepower}}}{{description=@{powerdescription}}}"
+	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_power(power_id, x.group(1))[0], clean_template)
