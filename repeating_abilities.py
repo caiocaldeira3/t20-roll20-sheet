@@ -2,8 +2,8 @@ import pyperclip as pyclip
 
 from base import repeat, describe
 
-print("Cole aqui o ID da abilidade que você quer repetir:")
-print("(Caso CTRL-V não cole o ID da abilidade recomendo testar CTRL+SHIFT+V)")
+print("Cole aqui o ID da habilidade que você quer repetir:")
+print("(Caso CTRL-V não cole o ID da habilidade recomendo testar CTRL+SHIFT+V)")
 
 ability_id = input()
 
@@ -12,8 +12,8 @@ ability_description = repeat("repeating_abilities", ability_id, "abilitydescript
 
 recommended = describe(ability_name, ability_description)
 
-print(f"Macro para o nome da abilidade: {ability_name}")
-print(f"Macro para o nome da abilidade: {ability_description}")
+print(f"Macro para o nome da habilidade: {ability_name}")
+print(f"Macro para o nome da habilidade: {ability_description}")
 
 print(f"Macro recomendada: {recommended}")
 
