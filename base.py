@@ -70,3 +70,7 @@ def rpt_spell(spell_id: str, spell_circle: str, rpt_attrs: Union[Sequence[str], 
 def create_attack_template(attack_id: str) -> str:
 	clean_template = "&{template:t20-attack}{{character=@{character_name}}}{{attackname=@{nomeataque}}}{{attackroll=[[1d20cs>@{margemcriticoataque}+[[@{ataquepericia}]]+@{bonusataque}]]}} {{damageroll=[[@{danoataque}+@{modatributodano}+@{danoextraataque}]]}} {{criticaldamageroll=[[@{danocriticoataque}+@{modatributodano}+@{danoextraataque}]]}}{{typeofdamage=@{ataquetipodedano}}}{{description=@{ataquedescricao}}}"
 	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_attack(attack_id, x.group(1))[0], clean_template)
+
+def create_ability_template(ability_id: str) -> str:
+	clean_template="&{template:t20-info}{{infoname=@{nameability}}}{{description=@{abilitydescription}}}"
+	return re.sub(r"@{(?!character_name)(.*?)}", lambda x: rpt_ability(ability_id, x.group(1))[0], clean_template)
