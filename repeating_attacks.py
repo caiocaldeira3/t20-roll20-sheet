@@ -1,15 +1,13 @@
 import pyperclip as pyclip
 
-from base import repeat, describe
+from base import describe, rpt_attack
 
 print("Cole aqui o ID do ataque que você quer repetir:")
 print("(Caso CTRL-V não cole o ID do ataque recomendo testar CTRL+SHIFT+V)")
 
 attack_id = input()
 
-attack_name = repeat("repeating_attacks", attack_id, "nomeataque")
-attack_description = repeat("repeating_attacks", attack_id, "ataquedescricao")
-
+attack_name, attack_description = rpt_attack(attack_id, ["nomeataque", "ataquedescricao"])
 recommended = describe(attack_name, attack_description)
 
 print(f"Macro para o nome do ataque: {attack_name}")
