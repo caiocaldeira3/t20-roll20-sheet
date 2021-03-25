@@ -5,15 +5,15 @@ from base import repeat, describe
 print("Cole aqui o ID do poder que você quer repetir:")
 print("(Caso CTRL-V não cole o ID do poder recomendo testar CTRL+SHIFT+V)")
 
-ability_id = input()
+power_id = input()
 
-power_name = repeat("repeating_powers", ability_id, "namepower")
-power_description = repeat("repeating_powers", ability_id, "powerdescription")
+power_name = repeat("repeating_powers", power_id, "namepower")
+power_description = repeat("repeating_powers", power_id, "powerdescription")
 
 recommended = describe(power_name, power_description)
 
-print(f"Macro para o nome da habilidade: {power_name}")
-print(f"Macro para o nome da habilidade: {power_description}")
+print(f"Macro para o nome da poder: {power_name}")
+print(f"Macro para o nome da poder: {power_description}")
 
 print(f"Macro recomendada: {recommended}")
 
