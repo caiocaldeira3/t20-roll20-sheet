@@ -13,7 +13,18 @@ print("(Caso CTRL-V não cole o ID do ataque recomendo testar CTRL+SHIFT+V)")
 
 attack_id = input()
 
-recommended = base.create_attack_template(attack_id)
+print(
+    "Explicite o típo de crítico",
+    "(1* = Multiplica Valor dos Dados | 2 = Multiplica Número de dados) *default:",
+    end=""
+)
+crit_type = input()
+crit_type = "1" if crit_type == "" else crit_type
+
+recommended = base.create_attack_template(
+    attack_id,
+    base.CriticalTypes.DAMAGE if crit_type == "1" else base.CriticalTypes.DICE
+)
 
 print(f"Template recomendado: {recommended}")
 
