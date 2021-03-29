@@ -22,8 +22,8 @@ def sub_template(action_template: str, action_id: str) -> str:
     return re.sub(substitute_regex, action_template, "@{_{action_id}_)")
 
 def padronize(
-    rpt_type: str, rpt_id: str, rpt_attrs: Union[Sequence[str], str]
-) -> list[str]:
+    rpt_type: str, rpt_id: str, rpt_attrs: Union[Sequence, str]
+) -> list:
     if not isinstance(rpt_attrs, Sequence):
         rpt_attrs = [rpt_attrs]
     elif isinstance(rpt_attrs, str):
@@ -34,7 +34,7 @@ def padronize(
     ]
     return results
 
-def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
+def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence, str]) -> list:
     if not isinstance(rpt_attrs, Sequence):
         rpt_attrs = [rpt_attrs]
     elif isinstance(rpt_attrs, str):
@@ -45,7 +45,7 @@ def rpt_ability(ability_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[s
     )
     return ability_attrs
 
-def rpt_power(power_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
+def rpt_power(power_id: str, rpt_attrs: Union[Sequence, str]) -> list:
     if not isinstance(rpt_attrs, Sequence):
         rpt_attrs = [rpt_attrs]
     elif isinstance(rpt_attrs, str):
@@ -56,7 +56,7 @@ def rpt_power(power_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
     )
     return power_attrs
 
-def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str]:
+def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence, str]) -> list:
     if not isinstance(rpt_attrs, Sequence):
         rpt_attrs = [rpt_attrs]
     elif isinstance(rpt_attrs, str):
@@ -68,8 +68,8 @@ def rpt_attack(attack_id: str, rpt_attrs: Union[Sequence[str], str]) -> list[str
     return attack_attrs
 
 def rpt_spell(
-    spell_id: str, spell_circle: str, rpt_attrs: Union[Sequence[str], str]
-) -> list[str]:
+    spell_id: str, spell_circle: str, rpt_attrs: Union[Sequence, str]
+) -> list:
     if not isinstance(rpt_attrs, Sequence):
         rpt_attrs = [rpt_attrs]
     elif isinstance(rpt_attrs, str):
